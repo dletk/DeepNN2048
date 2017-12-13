@@ -4,7 +4,7 @@ def transform(file_in):
     more data based on the rotation of the 2048-board
     """
     # Prepare file output
-    file_out = open("output_data_transform.csv", "w")
+    file_out = open("only_2048_3_transformed.csv", "w")
 
     # Each line the file_in is a 2048 board and the move of AI for that board
     # Using strip to remove th \n at the end of line
@@ -70,5 +70,5 @@ def write_board_to_file(board, file_out):
     file_out.write(board[-1] + "\n")
 
 
-file_in = open("./data/data.csv", "r")
+file_in = open("./only_2048_3.csv", "r")
 transform(file_in)
