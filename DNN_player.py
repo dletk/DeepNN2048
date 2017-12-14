@@ -35,12 +35,12 @@ num_nodes = 16
 This part is used to create the initial model
 """
 # Create the deep neural network
-model_NN = Sequential()
-model_NN.add(Dense(900, activation="relu", input_shape=(16,)))
-model_NN.add(Dense(300, activation="relu"))
-model_NN.add(Dense(200, activation="relu"))
-model_NN.add(Dense(100, activation="relu"))
-model_NN.add(Dense(num_nodes, activation="relu"))
+# model_NN = Sequential()
+# model_NN.add(Dense(900, activation="relu", input_shape=(16,)))
+# model_NN.add(Dense(300, activation="relu"))
+# model_NN.add(Dense(200, activation="relu"))
+# model_NN.add(Dense(100, activation="relu"))
+# model_NN.add(Dense(num_nodes, activation="relu"))
 # model_NN.add(Dense(num_nodes, activation="relu"))
 # model_NN.add(Dense(num_nodes, activation="relu"))
 # model_NN.add(Dense(num_nodes, activation="relu"))
@@ -54,26 +54,26 @@ model_NN.add(Dense(num_nodes, activation="relu"))
 # model_NN.add(Dense(num_nodes, activation="relu"))
 
 # The output layer
-model_NN.add(Dense(4, activation="softmax"))
+# model_NN.add(Dense(4, activation="softmax"))
 
 # Compile the model
-optimizer = Adam(lr=0.0001)
-model_NN.compile(optimizer=optimizer,
-                 loss="categorical_crossentropy", metrics=["accuracy"])
+# optimizer = Adam(lr=0.0001)
+# model_NN.compile(optimizer=optimizer,
+#                  loss="categorical_crossentropy", metrics=["accuracy"])
 
 """
 This part is used to load and keep training the current model
 """
 
 # Load the current model in to keep training
-# model_NN = load_model("complete_new_model_only2048_500_epochs.h5")
+model_NN = load_model("all_2048_8000games.h5")
 
 # Fitting the model
 print("===========> Begin fitting")
 stopping = EarlyStopping(monitor="val_loss", patience=5)
-model_NN.fit(X_data, Y_data, batch_size=512, epochs=200, validation_split=0.2)
+model_NN.fit(X_data, Y_data, batch_size=512, epochs=100, validation_split=0.2)
 
-model_NN.save("all_2048_8000games.h5")
+model_NN.save("all_2048_8000games_cont_training.h5")
 
 sample = np.array([[0, 4, 2, 32, 4, 2, 0, 2, 8, 0, 0, 0, 2, 0, 0, 0]])
 
