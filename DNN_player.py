@@ -29,7 +29,6 @@ Y_data = df_data[16]
 # print(Y_data.describe())
 Y_data = to_categorical(Y_data)
 
-num_nodes = 16
 
 """
 This part is used to create the initial model
@@ -40,18 +39,7 @@ This part is used to create the initial model
 # model_NN.add(Dense(300, activation="relu"))
 # model_NN.add(Dense(200, activation="relu"))
 # model_NN.add(Dense(100, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
-# model_NN.add(Dense(num_nodes, activation="relu"))
+# model_NN.add(Dense(16, activation="relu"))
 
 # The output layer
 # model_NN.add(Dense(4, activation="softmax"))
