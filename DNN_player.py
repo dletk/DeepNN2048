@@ -59,7 +59,7 @@ model_NN = load_model("all_2048_8000games.h5")
 # Fitting the model
 print("===========> Begin fitting")
 stopping = EarlyStopping(monitor="val_loss", patience=5)
-model_NN.fit(X_data, Y_data, batch_size=512, epochs=100, validation_split=0.2)
+model_NN.fit(X_data, Y_data, batch_size=512, epochs=100, validation_split=0.2, callbacks=[stopping])
 
 model_NN.save("all_2048_8000games_cont_training.h5")
 
